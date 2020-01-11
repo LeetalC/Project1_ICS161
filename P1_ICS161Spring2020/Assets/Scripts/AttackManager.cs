@@ -20,6 +20,6 @@ public class AttackManager : MonoBehaviour
     
     void Shoot() 
     {
-        Instantiate(Bullet, firingPoint.position, Bullet.transform.rotation);
+        Instantiate(Bullet, firingPoint.position, firingPoint.transform.rotation);
     }
 }

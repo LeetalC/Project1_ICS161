@@ -4,16 +4,50 @@ using UnityEngine;
 
 public class PlayerMovementManager : MonoBehaviour
 {
-    public float playerMovementSpeed;
+    private Quaternion currentRotation;
+
+    public float speed;
+    public Rigidbody playerRigidBody;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        playerMovementSpeed = 5.0f;
+        speed = 5.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(playerMovementSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0.0f, playerMovementSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
+ 
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.position += transform.forward * Time.deltaTime * speed;
+        }
+        if(Input.GetKey(KeyCode.S))
+        {
+            transform.rotation = Quaternion.Euler(0, -180, 0);
+            transform.position += transform.forward * Time.deltaTime * speed;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.rotation = Quaternion.Euler(0, -90, 0);
+            transform.position += transform.forward * Time.deltaTime * speed;
+        }
+        if(Input.GetKey(KeyCode.D))
+        {
+            transform.rotation = Quaternion.Euler(0, 90, 0);
+            transform.position += transform.forward * Time.deltaTime * speed;
+        }
+       // currentRotation = transform.rotation;
+
+
     }
+
+    //public Quaternion GetPlayerOrientation()
+    //{
+    //    return playerCurrentRotation;
+    //}
 }
