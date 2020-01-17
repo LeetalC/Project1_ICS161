@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerStatsManager : MonoBehaviour
 {
-    public float Health;
+    [SerializeField]
+    private float Health;
     
     // Start is called before the first frame update
     void Start()

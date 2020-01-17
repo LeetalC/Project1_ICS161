@@ -6,7 +6,8 @@ public class PlayerMovementManager : MonoBehaviour
 {
     private Quaternion currentRotation;
 
-    public float speed;
+    [SerializeField]
+    private float speed;
     public Rigidbody playerRigidBody;
 
     
@@ -41,13 +42,7 @@ public class PlayerMovementManager : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 90, 0);
             transform.position += transform.forward * Time.deltaTime * speed;
         }
-       // currentRotation = transform.rotation;
-
 
     }
 
-    //public Quaternion GetPlayerOrientation()
-    //{
-    //    return playerCurrentRotation;
-    //}
 }

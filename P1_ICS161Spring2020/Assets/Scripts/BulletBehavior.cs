@@ -5,7 +5,9 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 20.0f;
+    [SerializeField]
+    private float speed = 20.0f;
+    [SerializeField]
     private float damage = 100.0f;
 
     public Rigidbody bulletRB;
