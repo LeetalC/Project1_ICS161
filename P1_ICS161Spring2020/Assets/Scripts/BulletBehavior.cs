@@ -7,10 +7,12 @@ public class BulletBehavior : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private float speed = 20.0f;
+    
     [SerializeField]
     private float damage = 100.0f;
 
-    public Rigidbody bulletRB;
+    [SerializeField]
+    private Rigidbody bulletRB;
 
     EnemyBehavior Enemy;
 
@@ -19,8 +21,6 @@ public class BulletBehavior : MonoBehaviour
 
         bulletRB.velocity = transform.forward * speed;
     }
-
-
 
     void OnTriggerEnter(Collider collider)
     {

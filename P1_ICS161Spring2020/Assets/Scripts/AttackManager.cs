@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
-    public Transform firingPoint;
-    public GameObject Bullet;
+    [SerializeField]
+    private Transform firingPoint;
+    
+    [SerializeField]
+    private GameObject Bullet;
     // Start is called before the first frame update
     void Start()
     {
