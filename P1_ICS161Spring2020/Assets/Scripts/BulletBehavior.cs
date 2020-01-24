@@ -6,7 +6,7 @@ public class BulletBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private float speed = 20.0f;
+    private float speed = 25.0f;
     
     [SerializeField]
     private float damage = 100.0f;
@@ -24,9 +24,17 @@ public class BulletBehavior : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+       Debug.Log(collider.gameObject.name);
         Enemy = collider.GetComponent<EnemyBehavior>();
-        if(Enemy != null) Enemy.TakeDamage(GetDamage());
+        if (Enemy != null)
+        {
+            Enemy.TakeDamage(GetDamage());
+
+        }
+        if(collider.gameObject.name != "Player")
         Destroy(gameObject);
+
+
     }
 
     public float GetDamage() 

@@ -14,15 +14,5 @@ public class CameraMovementComponent : MonoBehaviour
     {
         transform.position = player.position + cameraOffset;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //this.transform.position = player.transform.position + new Vector3(1.5f,10.0f,-27.0f);
-    }
 }

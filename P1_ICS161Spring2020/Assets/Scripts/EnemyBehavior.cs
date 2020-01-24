@@ -7,11 +7,7 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField]
     private float health = 100.0f;  //currently, bullet does 100.0f damage so it one-shots enemies
 
-    [SerializeField]
     private float damageRecieved;
-
-    [SerializeField]
-    private GameObject Bullet;
 
     public void TakeDamage(float damageRecieved)
     {
